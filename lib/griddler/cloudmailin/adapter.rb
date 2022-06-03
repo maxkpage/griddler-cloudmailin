@@ -61,7 +61,7 @@ module Griddler
           subject: headers[header_keys[:subject]],
           text: params[:plain],
           html: params[:html],
-          attachments: params.fetch(:attachments) { {} }.values,
+          attachments: params.fetch(:attachments),
           headers: headers
         }
       end
