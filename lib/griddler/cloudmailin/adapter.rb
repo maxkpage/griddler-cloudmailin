@@ -53,6 +53,27 @@ module Griddler
       end
 
       def base_params # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
+        puts "*********xxx*********"
+        puts "*********xxx*********"
+        puts "*********xxx*********"
+        puts "Cloudmail Adapter Params"
+        puts "From: #{headers[header_keys[:from]].inspect.to_s}"
+        puts "date: #{headers[header_keys[:date]].try(:to_datetime)}"
+        puts "to: #{tos.inspect.to_s}"
+        puts "cc: #{ccs.inspect.to_s}"
+        puts "subject: #{headers[header_keys[:subject]].inspect.to_s}"
+        puts "text: #{params[:plain]}"
+        puts "html:"
+        puts params[:html].inspect.to_s
+        puts "attachments:"
+        puts params.fetch(:attachments).inspect.to_s
+        puts "headers"
+        puts headers.inspect.to_s
+        puts "params"
+        puts params.inspect.to_s
+        puts "*********xxx*********"
+        puts "*********xxx*********"
+        puts "*********xxx*********"
         @base_params ||= {
           to: tos,
           cc: ccs,
